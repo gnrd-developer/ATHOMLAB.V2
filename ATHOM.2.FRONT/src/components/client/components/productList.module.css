@@ -1,0 +1,18 @@
+.alert {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0px 2px 6px rgb(0, 0, 0);
+    position: absolute;
+    top: 400px;
+    margin: 10px;
+    white-space: nowrap;
+    display: inline-block;
+    z-index: 100;
+  }
+
+  

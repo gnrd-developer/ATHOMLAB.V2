@@ -1,0 +1,77 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.container {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*flex-direction: column;*/
+    align-items: center;
+    min-height: 100vh;
+    /*max-width: 100vw;*/
+    overflow-x: hidden; /*esta linea es importante*/
+    overflow-y: hidden; /*esta linea es importante*/
+    background: linear-gradient(#2b1055, #7597de);
+    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
+    margin-bottom: 10px;
+}
+
+.container .section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .section::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+    pointer-events: none;
+    transform: translateY(60px);
+}
+
+.text
+{
+    position: absolute;
+    right: -520px;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+}
+
+.container .section .image
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /*esta linea hace que pueda hacer clic en un boton por ejemplo aunque la imagen este sobre el boton*/
+}
+
+.card {
+    position: relative;
+    padding: 1.2rem 3rem 1.2rem 3rem;
+    background: rgba(255, 255, 255, 0.844);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transform: translateY(80px);
+}

@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.container {
+    align-items: center;
+    min-height: 100vh;
+    /*max-width: 100vw;*/
+    overflow-x: hidden; /*esta linea es importante*/
+    overflow-y: hidden; /*esta linea es importante*/
+    background: #1c0522;
+    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
+    padding-bottom: 50px;
+    margin-bottom: 10px;
+}
+
+.container .section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .section::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+    pointer-events: none;
+    transform: translateY(60px);
+}
+
+.text
+{
+    position: absolute;
+    right: -520px;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+}
+
+.container .section .image
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /*esta linea hace que pueda hacer clic en un boton por ejemplo aunque la imagen este sobre el boton*/
+}
+
+.card {
+    display: grid;
+    margin: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 3rem 1.2rem 3rem;
+    background: rgba(255, 255, 255, 0.844);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+/*
+.cajaC
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+*/
+
+.sec
+{
+    position: relative;
+    padding: 50px;
+    background: #1c0522;
+}
+
+
+.sec2
+{
+    position: relative;
+    padding: 50px;    
+}
+
+.somos
+{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.quienes
+{
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+h2{
+    text-decoration: none;
+}
+
+.muck{
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.muck:hover{
+    width: 500px;
+    transition-delay: 0s;
+}
+
+.circle{
+    position: absolute;
+    top: 0;
+    left: 150px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(219, 207, 207);
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+.muck:hover .circle::before{
+    clip-path: circle(400px at center);
+}
+
+.logo1{
+    position: relative;
+    width: 300px;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.muck:hover .logo1{
+    transform: scale(0);
+    transition-delay: 0s;
+}
+
+.content{
+    position: relative;
+    width: 80%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    transition: 0.2s;
+    visibility: hidden;
+}
+
+.muck:hover .content
+{
+    left: 250px;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+.content h3{
+    text-decoration-color: linear-gradient(#2b1055, #7597de);
+    text-transform: uppercase;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.muck .product
+{
+    position: absolute;
+    top: 20%;
+    left: 80px;
+    transform: translate(-20%, -20%) scale(0);
+    height: 400px;
+    transition: 0.3s;
+    transition-delay: 0s;
+}
+
+.muck:hover .product{
+    transform: translate(-30%, -30%) scale(1);
+    transition-delay: 0.3s;    
+}
+
+/* agregado empieza aqui*****************************/
+
+.cajaC
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra los elementos horizontalmente */
+  align-items: center;
+}
+
+.caja
+{
+    background-image: repeating-linear-gradient(
+      to bottom,
+      black,
+      rgb(255, 255, 255) 30%,
+      white 70%,
+      white
+    );
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(92, 88, 212, 0.5);
+  margin: 30px;
+  margin-top: 80px;
+  border: 2px solid black;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+    position: relative;
+    background-color: #000000;
+    padding: 60px;
+    font-size: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%; /* Agrega esta propiedad para que la cabecera ocupe todo el ancho del card /
+    left: 0; / Agrega esta propiedad para asegurarte de que la cabecera comience en la esquina superior izquierda del card */
+    left: 0;
+}
+
+.cuerpo
+{
+    padding: 50px;
+}
+
+.neon
+{
+    position: absolute;
+    transform: translate(-11%, -50%);
+    font-size: 7em;
+    padding: 50px;
+    border: none;
+}
+
+.neon:nth-child(1)
+{
+    color: transparent;
+    -webkit-text-stroke: 1px #257ea7;
+}
+
+/*.neon:nth-child(2)
+{
+    color: #6fd1fe;
+    animation: animate 2s ease-in-out infinite;
+}*/
+
+.caja a {
+  display: block;
+}
+
+.caja img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  max-width: 100%;
+  height: inherit;
+}
+
+@keyframes animate
+{
+    0%,100%
+    {
+        clip-path: polygon(0 100%, 2% 49%, 8% 49%, 15% 50%, 22% 55%, 29% 60%, 39% 61%, 51% 59%, 59% 56%, 67% 53%, 77% 49%, 89% 50%, 100% 55%, 100% 100%);
+    }
+    50%
+    {
+        clip-path: polygon(0 100%, 0 40%, 12% 40%, 27% 47%, 35% 51%, 43% 55%, 52% 54%, 64% 48%, 73% 46%, 83% 49%, 93% 59%, 100% 65%, 100% 77%, 100% 100%);
+    }
+}
+
+.color{
+    font-size: 1.4em;
+    text-decoration-color: linear-gradient(#2b1055, #7597de);
+}
+
+.h{
+    font-size: 1.4em;
+    color: #2b1055;
+}
+
+/*versión moviles*/
+@media (max-width: 914px) {
+
+    .card {
+        position: relative;
+        padding: 1.2rem 3rem 1.2rem 3rem;
+        background: rgba(255, 255, 255, 0.844);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transform: translateY(30px);
+    }
+
+    .muck .product{
+    position: absolute;
+    top: 20%;
+    left: 88%;
+    transform: translate(-20%, -20%) scale(0);
+    height: 300px;
+    transition: 0.3s;
+    transition-delay: 0s;
+    }
+
+    .muck:hover .product{
+        transform: translate(-30%, -30%) scale(1);
+        transition-delay: 0.3s;    
+    }
+}
+
+
+/*versión moviles*/
+@media (max-width: 700px) {
+
+    .card {
+        position: relative;
+        padding: 1.2rem 3rem 1.2rem 3rem;
+        background: rgba(255, 255, 255, 0.844);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transform: translateY(80px);
+    }
+
+    /*
+        .card {
+        position: relative;
+        padding: 1.2rem 3rem 1.2rem 3rem;
+        background: rgba(255, 255, 255, 0.844);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transform: translateY(80px);
+    }
+    */
+
+    .muck {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .muck:hover {
+        width: 100%;
+    }
+    
+    .circle{
+        position: absolute;
+        top: 0;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle::before {
+        clip-path: circle(70px at center);
+    }
+
+    .logo1 {
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        transition-delay: 0.1s;
+    }
+
+    .muck:hover .logo1 {
+        transform: scale(0);
+        transition-delay: 0s;
+    }
+
+    .muck .product{
+    position: absolute;
+    top: 20%;
+    left: -10px;
+    transform: translate(-20%, -20%) scale(0);
+    height: 200px;
+    transition: 0.3s;
+    transition-delay: 0s;
+    }
+
+    .muck:hover .product{
+        transform: translate(-30%, -30%) scale(1);
+        transition-delay: 0.3s;    
+    }
+
+    .muck .content p{
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .content{
+        position: relative;
+        width: 80%;
+        left: 20%;
+        padding: 20px 20px 20px 40px;
+        opacity: 0;
+        transition: 0.2s;
+        visibility: hidden;
+    }
+    
+    .muck:hover .content
+    {
+        left: 30px;
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.3s;
+    }
+
+}
+
+@media (max-width: 375px){
+    .product{
+        position: absolute;
+        top: 20%;
+        left: 28%;
+        transform: translate(-20%, -80%) scale(0);
+        height: 200px;
+        transition: 0.3s;
+        transition-delay: 0s;
+    }
+    
+    .muck:hover .product{
+        transform: translate(-150%, 20%) scale(1);
+        transition-delay: 0.3s;    
+    }
+}
+
+/*versión moviles*/
+@media (max-width: 430px) {
+
+    .card {
+        position: relative;
+        padding: 1.2rem 1rem 1.2rem 1rem;
+        background: rgba(255, 255, 255, 0.844);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        transform: translateY(31px);
+        margin: 0px;
+    }
+
+    .muck {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .muck:hover {
+        width: 100%;
+    }
+
+    .circle::before {
+        clip-path: circle(70px at center);
+    }
+
+    .logo1 {
+        width: 80%;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        transition-delay: 0.1s;
+    }
+
+    .muck:hover .logo1 {
+        transform: scale(0);
+        transition-delay: 0s;
+    }
+
+    .muck .product{
+    position: absolute;
+    top: 20%;
+    left: 78%;
+    transform: translate(-20%, -20%) scale(0);
+    height: 200px;
+    transition: 0.3s;
+    transition-delay: 0s;
+    }
+
+    .muck:hover .product{
+        transform: translate(-150%, 20%) scale(1);
+        transition-delay: 0.3s;    
+    }
+
+    .muck .content p{
+        max-width: 100%;
+        font-size: 16px;
+        word-wrap: break-word;
+    }
+
+    .muck .content .color{
+        padding-right: 100px;
+    }
+
+    .neon
+    {
+        position: absolute;
+        transform: translate(-10%, -50%);
+        font-size: 7em;
+        padding: 30px;
+        border: none;
+    }
+
+    .cuerpo
+    {
+        padding: 10px;
+    }
+
+    .cajaC
+    {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centra los elementos horizontalmente */
+    align-items: center;
+    }
+
+    .caja
+    {
+        background-image: repeating-linear-gradient(
+        to bottom,
+        black,
+        rgb(255, 255, 255) 30%,
+        white 70%,
+        white
+        );
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(92, 88, 212, 0.5);
+    margin: 10px;
+    margin-top: 80px;
+    border: 2px solid black;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+
+    .sec2
+    {
+        position: relative;
+        padding: 25px;    
+    }
+}
+
+

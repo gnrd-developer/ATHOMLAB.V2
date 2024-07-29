@@ -1,0 +1,286 @@
+.container
+{
+    /*width: 1050px;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    transform: skewY(-15deg);
+    transition: 0.5s;
+    padding-top: 90px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: #ffffff;
+    transition: 0.5s;
+}
+
+.container .card:before
+{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%; /*esta es la linea con volumen superior de la card*/
+    height: 15px;
+    background: #00c0f6;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 1.9s;
+}
+
+.container .card:after
+{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 15px;
+    height: 50%;
+    background: #00c0f6;
+    transform-origin: left;
+    transform: skewY(45deg);
+    transition: 0.3s;
+    border-bottom: 200px solid #00c0f6;
+}
+
+.container .card:hover{
+    transform: translateY(-40px);
+}
+
+.container .card .img_container{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #00c7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container .card .img_container .img{
+    max-width: 100%;
+    height: inherit;
+}
+
+
+.container .card .description{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    padding: 50px;
+    background: #fbf3f3;
+    text-align: center;
+    opacity: initial;
+}
+
+.container .card .description .p{
+    position: relative;
+    color: rgb(0, 0, 0);
+    margin-top: 0px;
+}
+
+.container .card .description:before{
+    content: '';
+    position: absolute;
+    z-index: -30;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(transparent, transparent, rgb(125, 125, 125));
+    transform-origin: bottom;
+    transform: skewX(48deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.container .card .description:after
+{
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 15px;
+    height: 50%;
+    background: #ffffff;
+    transform-origin: left;
+    transform: skewY(45deg);
+    transition: 0.3s;
+    border-bottom: 200px solid #adaba9;
+}
+
+.container .card:hover .description:before
+{
+    transform: translateY(40px) skewX(45deg);
+    filter: blur(5px);
+    opacity: 0.6;
+}
+
+.container .card:nth-child(1)
+{
+    z-index: 3;
+}
+
+.container .card:nth-child(2)
+{
+    z-index: 2;
+}
+
+.container .card:nth-child(3)
+{
+    z-index: 1;
+}
+
+
+/*######################################################################################################*/
+
+@media (max-width: 414px) {
+    
+    .container
+    {
+        /*width: 1050px;*/
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        transform: skewY(-15deg);
+        transition: 0.5s;
+        padding-top: 60px;
+        padding-left: 50px;
+        padding-right: 0px;
+    }
+    
+    .container .card{
+        position: relative;
+        width: 100px;
+        height: 200px;
+        background-color: #ffffff;
+        transition: 0.5s;
+        margin-block-end: 5%;
+    }
+    
+    .container .card:before
+    {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: 0;
+        width: 100%; /*esta es la linea con volumen superior de la card*/
+        height: 15px;
+        background: #00c0f6;
+        transform-origin: bottom;
+        transform: skewX(45deg);
+        transition: 1.9s;
+    }
+    
+    .container .card:after
+    {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 15px;
+        height: 50%;
+        background: #00c0f6;
+        transform-origin: left;
+        transform: skewY(45deg);
+        transition: 0.3s;
+        border-bottom: 200px solid #00c0f6;
+    }
+    
+    .container .card:hover{
+        transform: translateY(-40px);
+    }
+    
+    .container .card .img_container{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background: #00c7ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .container .card .img_container .img{
+        max-width: 100%;
+        height: inherit;
+    }
+    
+    
+    .container .card .description{
+        position: absolute;
+        width: 50%;
+        height: 50px;
+        padding: 50px;
+        background: #fbf3f3;
+        opacity: initial;
+    }
+    
+    .description .p{
+        display: flex;
+        max-width: 100%; /* ajustar el ancho máximo para dispositivos móviles */
+        font-size: 14px; /* ajustar el tamaño de fuente para dispositivos móviles */
+        line-height: 1.4; /* ajustar la altura de línea para dispositivos móviles */
+    }
+    
+    .container .card .description:before{
+        content: '';
+        position: absolute;
+        z-index: -30;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(transparent, transparent, rgb(125, 125, 125));
+        transform-origin: bottom;
+        transform: skewX(48deg);
+        transition: 0.5s;
+        pointer-events: none;
+    }
+    
+    .container .card .description:after
+    {
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 15px;
+        height: 50%;
+        background: #ffffff;
+        transform-origin: left;
+        transform: skewY(45deg);
+        transition: 0.3s;
+        border-bottom: 100px solid #adaba9;
+    }
+    
+    .container .card:hover .description:before
+    {
+        transform: translateY(40px) skewX(45deg);
+        filter: blur(5px);
+        opacity: 0.6;
+    }
+    
+    .container .card:nth-child(1)
+    {
+        z-index: 3;
+    }
+    
+    .container .card:nth-child(2)
+    {
+        z-index: 2;
+    }
+    
+    .container .card:nth-child(3)
+    {
+        z-index: 1;
+    }
+}
+
+
